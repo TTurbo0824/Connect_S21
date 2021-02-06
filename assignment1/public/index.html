@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Fox and the Grapes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <style>
+    </style>
+
+    <script>
+        let displayEmoji = () => {
+            var elem = document.createElement("span");
+            var e = window.event;
+            var emojis = ["🦊", "🍇"];
+            var emoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+            elem.textContent = emoji;
+            elem.style.position = "absolute";
+            elem.style.fontSize = Math.floor(Math.random() * (45)) + 10 + "pt";
+            elem.style.left = e.pageX + "px";
+            elem.style.top = e.pageY + "px";
+            document.body.appendChild(elem);
+        }
+
+        document.onkeydown = function (evt) {
+            if (evt.keyCode === 27) {
+                for (i = 0; i < document.getElementsByTagName('span').length; i++) {
+                    document.getElementsByTagName('span')[i].innerHTML = '';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onclick="displayEmoji()">
+    <p>click anywhere on the page to see what happens and press the escape key to clear</p>
+    <h1>The Fox & the Grapes</h1>
+    <img src="fox.jpg" style="margin-top: 25px;" width=68%></img>
+    <textarea readonly id="script" rows="23" cols="52" wrap="soft">
+    A Fox one day spied a beautiful bunch of ripe grapes hanging from a vine trained along the branches of a tree. The grapes seemed ready to burst with juice, and the Fox's mouth watered as he gazed longingly at them.
+        
+    The bunch hung from a high branch, and the Fox had to jump for it. The first time he jumped he missed it by a long way. So he walked off a short distance and took a running leap at it, only to fall short once more. Again and again he tried, but in vain.
+        
+    Now he sat down and looked at the grapes in disgust.
+        
+    "What a fool I am," he said. "Here I am wearing myself out to get a bunch of sour grapes that are not worth gaping for."
+        
+    And off he walked very, very scornfully.
+    </textarea>
+</body>
+<footer>
+    source: <a href="http://read.gov/aesop/005.html" target="_blank">http://read.gov/aesop/005.html
+</footer>
+
+</html>

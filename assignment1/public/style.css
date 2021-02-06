@@ -1,0 +1,45 @@
+body {
+    padding: 25px 100px;
+}
+
+h1,
+footer {
+    font-family: "Rubik";
+    color: rgb(80, 80, 80);
+}
+
+footer {
+    font-size: 10pt;
+}
+
+p {
+    margin-bottom: 60px;
+    font-size: 10pt;
+    font-family: "Rubik";
+    color: rgb(125, 125, 125);
+}
+
+textarea {
+    margin-top: 10px;
+    margin-bottom: 45px;
+    padding-top: 30px;
+    border: none;
+    outline: none;
+    user-select: none;
+    resize: none;
+    color: rgb(101, 101, 101);
+}
+
+#script {
+    font-size: 14pt;
+    line-height: 1.5;
+}
+
+a:link {
+    text-decoration: none;
+    color: rgb(150, 73, 150);
+}
+
+a:visited{
+    color: rgb(150, 73, 150);
+}
