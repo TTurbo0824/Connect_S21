@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Anonymous Messages</title>
+    <style>
+        body {
+            line-height: 2.2;
+            font-family: Roboto;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="/formdata">
+        <label for="animals">Choose your spirit animal:</label>
+        <select id="animals" name="animals">
+            <option value="lion">Lion</option>
+            <option value="tiger">Tiger</option>
+            <option value="wolf">Wolf</option>
+            <option value="horse">Horse</option>
+            <option value="fox">Fox</option>
+            <option value="butterfly">Butterfly</option>
+        </select><br />
+        <label for="data">Enter your message to the world:</label>
+        <input type="text" name="data" placeholder="Write anything"><br />
+        <label for="color">Pick your favorite color:</label>
+        <input type="color" name="color" value="Enter Text">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</body>
+
+</html>
