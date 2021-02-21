@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title><%= data.text %></title>
+    <style>
+        html {
+            font-family: Roboto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: <%= data.color %>"><%= data.text %></h1>
+    <p><%= data.date %></p>
+    <div style="margin-bottom: 15px;"></div>
+    <p>
+        <%= data.longtext %>
+    </p>
+    <div style="margin-bottom: 30px"></div>
+
+    <form action="../index.html">
+        <input type="submit" value="Go back" />
+    </form>
+</body>
+
+</html>
