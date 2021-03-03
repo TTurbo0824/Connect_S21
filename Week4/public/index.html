@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Fortune Cooke for a Day</title>
+
+    <script type="text/javascript">
+        var messages = null;
+        var text = null;
+        var color = null;
+
+        window.addEventListener('load', function () {
+            messages = document.getElementById('messages');
+            text = document.getElementById('text');
+            color = document.getElementById('color');
+            submit = document.getElementById('submit');
+            submit.addEventListener('click', sendData)
+        });
+
+        function sendData() {
+            fetch('/formdata?text=' + text.value + "&color=" + color.value)
+                .then(response => response.json())
+                .then(data => populateMesssages(data))
+        }
+
+        function populateMesssages(newmessages) {
+            messages.innerHTML = "";
+
+            for (var i = 0; i < newmessages.length; i++) {
+                var fortunes = ["the weather is wonderful.", "you are busy, but you are happy.",
+                    "You have a secret admirer.", "love, because it is the only true adventure.",
+                    "the best prediction of future is the past.",
+                    "one of the first things you should look for in a problem is its positive side."
+                ]
+                var fortune = fortunes[Math.floor(Math.random() * fortunes.length)]
+                messages.innerHTML = messages.innerHTML + newmessages[i].text + ", " + fortune + newmessages[i].color +
+                    "<br/>";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div style="font-size: 45px">Fortune Cooke for a Day</div>
+    <br />
+    <div id="messages" style="font-size: 15px">
+
+    </div><br />
+    <form method="GET" action="/formdata">
+        <label for="data">Enter text to get a random fortune:</label>
+        <input type="text" id="text" name="text" placeholder="Enter your name">
+        <input type="color" id="color" name="color">
+        <input type="button" id="submit" name="submit" value="Submit">
+    </form>
+</body>
+
+</html>
