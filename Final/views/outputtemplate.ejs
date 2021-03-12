@@ -1,0 +1,64 @@
+<html>
+
+    <head>
+        <title>Dairy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="cache-control" content="no-cache" />
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <div class="top">
+            <a href="/search?q="><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#719ECE" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+            </svg></a>
+            <div class="search-container">
+                <form method="GET" action="/search">
+                    <input type="text" name="q" placeholder="search..." autocomplete="off"></input>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+             </div>
+        </div>
+       
+        <div style="margin-bottom: 45px"></div>
+        <div id="container">
+            <div class="one" id="mood" ><a href="/search?m=😊">😊</a></div>
+            <div class="two" id="mood"><a href="/search?m=🙂">🙂</a></div>
+            <div class="three" id="mood"><a href="/search?m=😐">😐</a></div>
+            <div class="four" id="mood"><a href="/search?m=😖" >😖</a></div>
+            <div class="five" id="mood"><a href="/search?m=😡">😡</a></div>
+        </div>
+        <div style="margin-bottom: 30px"></div>
+        <hr />
+        <p>
+            <% if (typeof search != "undefined") { %>
+                <% if (data.length >= 1) { %>
+                    search for: <%= search %> | <%= (data.length) %> results
+                <% } else { %>
+                    no entries found
+                <% } %>
+            <% } %>
+        </p>
+        <% 
+        if(data.length > 0) {
+            for(var i = 0; i < data.length; i++) { 
+        %>      
+                <div id="dataout<%= i %>" class="results"><a href="/displaypage?_id=<%= data[i]._id %>"><%= data[i].date %></a>
+                    <% if (typeof editor != "undefined") { %>
+                        | <a href="/newpage?_id=<%= data[i]._id %>"> Edit</a>  | <a href="/deletepage?_id=<%= data[i]._id %>"> Delete</a>
+                    <% } %>
+                </div>
+            <% } %>
+       
+        <% } %>
+        <div style="margin-bottom: 150px"></div>
+        
+        <br />
+        <a href="/newpage.html"><button id="btn2">new post</button></a>
+        <a href="/?editor"><button id="btn2">edit mode</button></a>
+        <div>
+    </body>
+
+</html>

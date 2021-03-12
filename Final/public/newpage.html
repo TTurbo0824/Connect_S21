@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Journal Entry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function required() {
+                var valueDate = document.getElementById("date").value;
+                var moodDate = document.getElementById("selection").value;
+                if (!valueDate) {
+                    alert('please enter a valid date!');
+                    event.preventDefault(); 
+                    return false;
+                } else if (moodDate =="how are you?") {
+                    alert('please enter your mood!');
+                    event.preventDefault(); 
+                    return false;
+                } else {
+                    return true; 
+                }
+            }
+    </script>
+</head>
+
+<body>
+    <a href="/search?q="><button class="btn" action="action" style="margin-bottom: 15px;">back</button></a>
+    <form method="POST" action="/newpage" onsubmit="required()">
+        <input id="date" type="date" name="date"><br />
+        <div style="margin-bottom: 5px"></div>
+        <select id="selection" name="mood">
+            <option default>how are you?</option>
+            <option value="😊">😊: super</option>
+            <option value="🙂">🙂: good</option>
+            <option value="😐">😐: fine</option>
+            <option value="😖">😖: bad</option>
+            <option value="😡">😡: terrible</option>
+        </select>
+        <div style="margin-bottom: 15px"></div>
+        <textarea name="maincontent" rows="15" placeholder="start writing..."></textarea><br />
+        <input type="submit" name="submit" id="submit" value="submit" >
+    </form>
+</body>
+
+</html>

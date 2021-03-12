@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Journal Entry</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+        <a href="/search?q="><button class="btn" action="action" style="margin-bottom: 15px;">back</button></a>
+        <form method="POST" action="/newpage">
+            <input type="hidden" name="_id" value="<%= data._id %>">
+            <input id="selection" type="date" name="date" value="<%= data.date %>"><br />
+            <div style="margin-bottom: 5px"></div>
+            <select id="selection" name="mood">
+                <option default><%= data.mood %></option>
+                <option value="😊">😊: super</option>
+                <option value="🙂">🙂: good</option>
+                <option value="😐">😐: fine</option>
+                <option value="😖">😖: bad</option>
+                <option value="😡">😡: terrible</option>
+            </select>
+            <div style="margin-bottom: 15px"></div>
+            <textarea name="maincontent" rows="15" placeholder="start writing..."><%- data.maincontent %></textarea><br />
+            <input type="submit" name="submit" value="submit">
+       </form>
+    </body>
+</html>

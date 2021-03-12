@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title><%= data.date %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <a href="/search?q="><button class="btn" action="action" style="margin-bottom: 15px;">back</button></a>
+        <div style="margin-bottom: 15px;"></div>
+    
+        <center><p id="emoji"><%= data.mood %></p></center>
+        <br />
+        <div style="margin-bottom: 30px;"></div>
+
+        <b><%- data.date %></b>
+        <br />
+        <p>
+            <%- data.maincontent %>
+        </p>
+    </body>
+</html>
