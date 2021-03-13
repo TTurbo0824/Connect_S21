@@ -1,3 +1,11 @@
+var https = require('https');
+var fs = require('fs'); // Using the filesystem module
+
+var credentials = {
+    key: fs.readFileSync('star_itp_io.key'),
+    cert: fs.readFileSync('star_itp_io.pem')
+};
+
 var datastore = require('nedb');
 var db = new datastore({ filename: 'database.json', autoload: true });
 
@@ -86,6 +94,6 @@ app.post('/newpage', function (req, res) {
     }
 });
 
-app.listen(80, function () {
-  console.log('Example app listening on port 80!');
-});
+var httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(443);
