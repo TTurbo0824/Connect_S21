@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title><%= data.text %></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script>
+        function goBack() {
+          window.history.back();
+        }
+    </script>
+    <style>
+        html{
+            margin: 50px;
+        }
+        h1, p {
+            font-family: 'Roboto', sans-serif;
+        }
+
+    </style>
+</head>
+
+<body style="background-color: <%= data.color %>;">
+    <button onclick="goBack()">back</button>
+    <h1><%= data.text %></h1>
+    <p>
+        <%= data.longtext %>
+    </p>
+    <img src="/uploads/<%= data.file.filename %>" width="500" height="auto">
+    <pre style="display: none;">
+        <%= JSON.stringify(data.file); %>  
+    </pre>    
+</body>
+
+</html>

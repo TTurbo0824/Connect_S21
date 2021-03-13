@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Gallery</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        h1, a {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gallery</h1>
+    <a href="/"><button>Add new photo</button></a>
+    <div style="margin-bottom: 15px;"></div>
+    <% 
+    if(data.length > 0) {
+       for(var i = 0; i < data.length; i++) { 
+    %>
+    <div id="dataout<%=i%>"><a href="/displayrecord?_id=<%= data[i]._id %>"><%= data[i].text %></a></div>
+    
+    <a href="/displayrecord?_id=<%= data[i]._id %>"><img src="/uploads/<%= data[i].file.filename %>" width="120px" height="auto"></a>
+    <div style="margin-bottom: 15px;"></div>
+    <% 
+        } 
+    }
+    %>
+</body>
+
+</html>

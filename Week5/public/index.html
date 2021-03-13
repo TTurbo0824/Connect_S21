@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Add Photo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        input[type=file], input[type=submit] {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        input[type=text], textarea {
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="/formdata" enctype="multipart/form-data">
+        <input type="file" name="photo">
+        <div style="margin-bottom: 15px"></div>
+        <input type="text" name="data" placeholder="Enter title" autocomplete="off">
+        <div style="margin-bottom: 15px"></div>
+        <label for="data" style="font-family: 'Roboto'">Choose background color:</label>
+        <input type="color" name="color" value="#ffffff"><br />
+        <div style="margin-bottom: 15px"></div>
+        <textarea name="longtext" cols="50" rows="10"></textarea>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</body>
+
+</html>
